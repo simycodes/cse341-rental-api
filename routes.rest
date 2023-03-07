@@ -1,0 +1,117 @@
+# LOCAL HOST
+# REPLACE JWT WITH YOUR OWN GENERATED TOKENS RECEIVED AFTER A LOGIN PROCESS
+# Authorization: Bearer <Your token>
+
+# GET TO THE API DOCUMENTATION
+###
+http://localhost:3000/api-docs/#/
+
+# LOGIN(AND / REGISTER) VIA OUTH GOOGLE
+###
+POST http://localhost:3000/users/google
+
+# STANDARD LOGIN  
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "simycodes@gmail.com",
+    "password":"123456"
+}
+
+# STANDARD USER REGISTRATION 
+###
+POST http://localhost:3000/users/registerUser
+Content-Type: application/json
+
+{
+    "firstName": "Simon",
+    "lastName": "Mule",
+    "email": "simycodes@gmail.com",
+    "password":"123456"
+}
+
+# USER UPDATE 
+###
+PUT http://localhost:3000/users/updateUser
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDA3MjY2MzEwN2Q1Njc3NTkzOGI2ZDgiLCJpYXQiOjE2NzgxOTAxNzksImV4cCI6MTY3ODI3NjU3OX0.rV7DX_45GgTuvW8L-1Q7ewpT8cQfhV4EDCDtK5LDjP8
+
+{
+    "firstName": "Danny",
+    "lastName": "Kaya",
+    "email": "DannyKaya@gmail.com",
+    "birthday": "18-01-2020",
+    "gender": "Male",
+    "country": "Zambia"
+}
+
+# GET A SINGLE USER
+###
+GET http://localhost:3000/users/64072663107d56775938b6d8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDA3MjY2MzEwN2Q1Njc3NTkzOGI2ZDgiLCJpYXQiOjE2NzgxOTAxNzksImV4cCI6MTY3ODI3NjU3OX0.rV7DX_45GgTuvW8L-1Q7ewpT8cQfhV4EDCDtK5LDjP8
+
+# GET ALL USERS
+###
+GET http://localhost:3000/users/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDA3MjY2MzEwN2Q1Njc3NTkzOGI2ZDgiLCJpYXQiOjE2NzgxOTAxNzksImV4cCI6MTY3ODI3NjU3OX0.rV7DX_45GgTuvW8L-1Q7ewpT8cQfhV4EDCDtK5LDjP8
+
+
+# DISPLAY AND INTERACT WITH THE CONTACTS API DOCUMENTATION - USE BROWSER FOR THIS ROUTE
+#ON RENDER
+###
+https://cse341-blog-api-service.onrender.com/api-docs/#/
+
+# LOGIN VIA OUTH GOOGLE
+###
+POST https://cse341-blog-api-service.onrender.com/users/google
+
+# STANDARD LOGIN  
+###
+POST https://cse341-blog-api-service.onrender.com/users/login
+Content-Type: application/json
+
+{
+    "email": "simymule@gmail.com",
+    "password":"123456"
+}
+
+# STANDARD USER REGISTRATION 
+###
+POST https://cse341-blog-api-service.onrender.com/users/registerUser
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Peter",
+    "email": "john@gmail.com",
+    "password": "123456"
+}
+
+# USER UPDATE 
+###
+PUT https://cse341-blog-api-service.onrender.com/users/updateUser
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
+
+{
+    "firstName": "Bwalya",
+    "lastName": "Mutondo",
+    "email": "bwalya1234@gmail.com",
+    "password":"123456",
+    "birthday": "18-05-200",
+    "gender": "male",
+    "country": "Zambia"
+}
+
+# GET A SINGLE USER
+###
+https://cse341-blog-api-service.onrender.com/users/63dd05a9876d194ec8741694
+Authorization: Bearer
+
+# GET ALL USERS
+###
+GET https://cse341-blog-api-service.onrender.com/users/
+Authorization: Bearer
+

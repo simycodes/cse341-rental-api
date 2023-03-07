@@ -61,15 +61,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDA3M
 # DISPLAY AND INTERACT WITH THE CONTACTS API DOCUMENTATION - USE BROWSER FOR THIS ROUTE
 #ON RENDER
 ###
-https://cse341-blog-api-service.onrender.com/api-docs/#/
+https://cse341-rental-api-service.onrender.com/api-docs/#/
 
 # LOGIN VIA OUTH GOOGLE
 ###
-POST https://cse341-blog-api-service.onrender.com/users/google
+POST https://cse341-rental-api-service.onrender.com/users/google
 
 # STANDARD LOGIN  
 ###
-POST https://cse341-blog-api-service.onrender.com/users/login
+POST https://cse341-rental-api-service.onrender.com/users/login
 Content-Type: application/json
 
 {
@@ -79,7 +79,7 @@ Content-Type: application/json
 
 # STANDARD USER REGISTRATION 
 ###
-POST https://cse341-blog-api-service.onrender.com/users/registerUser
+POST https://cse341-rental-api-service.onrender.com/users/registerUser
 Content-Type: application/json
 
 {
@@ -91,7 +91,7 @@ Content-Type: application/json
 
 # USER UPDATE 
 ###
-PUT https://cse341-blog-api-service.onrender.com/users/updateUser
+PUT https://cse341-rental-api-service.onrender.com/users/updateUser
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5MGRmMDQ3NDRjY2UxMGYzZDY2MmEiLCJpYXQiOjE2NzczNDMzMTksImV4cCI6MTY3NzQyOTcxOX0.x1lxi_u0OKKmyu6ahjJDw_fEiyBWI1iH0Ai5Uxz-9AY
 
@@ -107,11 +107,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5M
 
 # GET A SINGLE USER
 ###
-https://cse341-blog-api-service.onrender.com/users/63dd05a9876d194ec8741694
+GET https://cse341-rental-api-service.onrender.com/users/63dd05a9876d194ec8741694
 Authorization: Bearer
 
 # GET ALL USERS
 ###
-GET https://cse341-blog-api-service.onrender.com/users/
+GET https://cse341-rental-api-service.onrender.com/users/
 Authorization: Bearer
 

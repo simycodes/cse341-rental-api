@@ -90,6 +90,7 @@ const updateUser = async (req, res) => {
     user.email = email;
     user.birthday = birthday;
     user.gender = gender;
+    user.favoriteQuote = favoriteQuote;
     user.location = country;
     // UPDATE THE NEW USER DETAILS - user.save(); CALLS UserSchema.pre('save',) middleware
     // that may cause some update errors, hence use of if(!this.isModified('password')) expression in the middleware

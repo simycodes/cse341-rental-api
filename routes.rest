@@ -74,7 +74,7 @@ Content-Type: application/json
 
 {
     "email": "john@gmail.com",
-    "password":"123456"
+    "password":"1234567"
 }
 
 # STANDARD USER REGISTRATION 

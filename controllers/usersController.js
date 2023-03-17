@@ -111,7 +111,7 @@ const getSingleUser = async (req, res) => {
   }
   try {
     const user = (await User.findById(req.params.id)) || (await UserOauth.findById(req.params.id));
-    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.status(200).json(user);
   } catch (error) {
     res.status(500).json(error);
@@ -124,7 +124,7 @@ const getAllUsers = async (req, res) => {
     const users = await User.find();
     const users2 = await UserOauth.find();
     let allUsers = [...users, ...users2];
-    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.status(200).json(allUsers);
   } catch (error) {
     res.status(500).json(error);

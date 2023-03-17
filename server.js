@@ -14,7 +14,7 @@ require('dotenv').config();
 // Passport config
 require('./middleware/passport')(passport); // PASSING IMPORTED password AS AN ARGUMENT
 // SETTING THE PORT
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // VALIDATING BY PARSING INCOMING DATA-JSON FROM APP THROUGH THE BODY IN REQUEST ARGUMENT
 app.use(bodyParser.json());
@@ -56,3 +56,5 @@ const start = async () => {
 
 // CALL THE START FUNCTION TO START THE SERVER TO DATABASE CONNECTION
 start();
+
+module.exports = app;

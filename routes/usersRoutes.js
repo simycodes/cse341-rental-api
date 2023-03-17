@@ -6,6 +6,12 @@ const userRouter = express.Router();
 
 // GET THE USER AUTHENTICATION FUNCTION
 const { authenticateUser } = require('../middleware/authentication.js');
+
+// Define a middleware that sets the content type header to JSON
+userRouter.use((req, res, next) => {
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  next();
+});
 // GET THE VALIDATION FUNCTIONS
 const {
   validateIncomingUserDataForLoginUser,
@@ -14,12 +20,12 @@ const {
 } = require('../middleware/validate');
 
 const {
-    registerUser,
-    googleOAuth,
-    login,
-    updateUser,
-    getSingleUser,
-    getAllUsers 
+  registerUser,
+  googleOAuth,
+  login,
+  updateUser,
+  getSingleUser,
+  getAllUsers
 } = require('../controllers/usersController.js');
 
 // AUTHENTICATION WITH GOOGLE AUTH - LOGIN START
@@ -52,5 +58,28 @@ userRouter.get('/:id', authenticateUser, getSingleUser);
 // GET ALL USERS
 userRouter.get('/', authenticateUser, getAllUsers);
 
-
 module.exports = userRouter;
+
+// const express = require('express');
+// const passport = require('passport');
+// const userRouter = express.Router();
+
+// // Define the routes and route handlers
+// userRouter.get('/google', passport.authenticate('google', { scope: ['profile'] }));
+// userRouter.post('/registerUser', validateIncomingUserDataForRegisteringUser, registerUser);
+// userRouter.get(
+//   '/google/callback',
+//   passport.authenticate('google', { failureRedirect: '/' }),
+//   googleOAuth
+// );
+// userRouter.post('/login', validateIncomingUserDataForLoginUser, login);
+// userRouter.put(
+//   '/updateUser',
+//   authenticateUser,
+//   validateIncomingUserDataForUpdatingUser,
+//   updateUser
+// );
+// userRouter.get('/:id', authenticateUser, getSingleUser);
+// userRouter.get('/', authenticateUser, getAllUsers);
+
+// module.exports = userRouter;

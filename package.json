@@ -5,6 +5,7 @@
   "main": "test.js",
   "scripts": {
     "start": "node server.js",
+    "test": "jest --watchAll --coverage",
     "dev_start": "nodemon server.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",

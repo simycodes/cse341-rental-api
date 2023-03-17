@@ -1,40 +1,37 @@
 // IMPORTING PACKAGES-DEPENDENCIES FOR THE SERVER
 const express = require('express');
-
 // GET THE USER AUTHENTICATION FUNCTION
 const { authenticateUser } = require('../middleware/authentication.js');
-
 // CREATING-DEFINING THE ROUTER VARIABLE
-const housesRouter = express.Router();
+const houseRouter = express.Router();
 
 // GET THE VALIDATION FUNCTIONS
 const {
-  /*validateIncomingHouseDataForAddHouse,*/
-  validateIncomingHouseDataForUpdatingHouse,
+  validateIncomingHouseDataForAddHouse,
+  validateIncomingHouseDataForUpdatingHouse
 } = require('../middleware/validate');
 
 const {
-    getHouses,
-    getHouseById,
-    putHouseById,
-    deleteHouseById
-  } = require('../controllers/housesController.js');
+  getAllHouses,
+  getSingleHouse,
+  addHouse,
+  updateHouse,
+  deleteHouse
+} = require('../controllers/housesController.js');
 
-  // UPDATE A HOUSE
-housesRouter.put(
-  '/updatehouse',
-  authenticateUser,
-  validateIncomingHouseDataForUpdatingHouse,
-  putHouseById
-);
-  
+// GET ALL HOUSES
+houseRouter.get('/', getAllHouses);
+
 // GET AS SINGLE HOUSE
-housesRouter.get('/:id', authenticateUser, getHouseById);
-  
-// GET ALL USERS
-housesRouter.get('/', authenticateUser, getHouses);
+houseRouter.get('/:id', getSingleHouse);
+
+// ADD A HOUSE
+houseRouter.post('/', authenticateUser, validateIncomingHouseDataForAddHouse, addHouse);
+
+// UPDATE A HOUSE
+houseRouter.put('/:id', authenticateUser, validateIncomingHouseDataForUpdatingHouse, updateHouse);
 
 // DELETE A HOUSE
-housesRouter.delete('/:id', authenticateUser, deleteHouseById);
+houseRouter.delete('/:id', authenticateUser, deleteHouse);
 
-module.exports = housesRouter;
+module.exports = houseRouter;

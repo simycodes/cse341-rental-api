@@ -1,40 +1,47 @@
 // IMPORTING PACKAGES-DEPENDENCIES FOR THE SERVER
 const express = require('express');
-
 // GET THE USER AUTHENTICATION FUNCTION
 const { authenticateUser } = require('../middleware/authentication.js');
-
 // CREATING-DEFINING THE ROUTER VARIABLE
-const apartmentsRouter = express.Router();
+const apartmentRouter = express.Router();
 
 // GET THE VALIDATION FUNCTIONS
 const {
-  /*validateIncomingHouseDataForAddHouse,*/
-  validateIncomingApartmentDataForUpdatingApartment,
+  validateIncomingApartmentDataForAddApartment,
+  validateIncomingApartmentDataForUpdatingApartment
 } = require('../middleware/validate');
 
 const {
-    getApartments,
-    getApartmentById,
-    putApartmentById,
-    deleteApartmentById
-  } = require('../controllers/apartmentsController.js');
+  getAllApartments,
+  getSingleApartment,
+  addApartment,
+  updateApartment,
+  deleteApartment
+} = require('../controllers/apartmentsController.js');
 
-  // UPDATE A HOUSE
-apartmentsRouter.put(
-  '/updateApartment',
+// GET ALL APARTMENTS
+apartmentRouter.get('/', getAllApartments);
+
+// GET AS SINGLE APARTMENT
+apartmentRouter.get('/:id', getSingleApartment);
+
+// ADD AN APARTMENT
+apartmentRouter.post(
+  '/',
+  authenticateUser,
+  validateIncomingApartmentDataForAddApartment,
+  addApartment
+);
+
+// UPDATE AN APARTMENT
+apartmentRouter.put(
+  '/:id',
   authenticateUser,
   validateIncomingApartmentDataForUpdatingApartment,
-  putApartmentById
+  updateApartment
 );
-  
-// GET AS SINGLE HOUSE
-apartmentsRouter.get('/:id', authenticateUser, getApartmentById);
-  
-// GET ALL USERS
-apartmentsRouter.get('/', authenticateUser, getApartments);
 
-// DELETE A HOUSE
-apartmentsRouter.delete('/:id', authenticateUser, deleteApartmentById);
+// DELETE AN APARTMENT
+apartmentRouter.delete('/:id', authenticateUser, deleteApartment);
 
-module.exports = apartmentsRouter;
+module.exports = apartmentRouter;

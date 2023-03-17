@@ -81,7 +81,7 @@ const updateUser = async (req, res) => {
     console.log(req.user); // THIS NOW HOLDS USER ID - AFTER AUTHENTICATION WITH jwt.verify() - { userId: '63e69ee471eea96576349459' }
     // res.send("update user working");
     console.log(req.body);
-    const { firstName, lastName, email, birthday, gender, favoriteQuote, country } = req.body;
+    const { firstName, lastName, email, birthday, gender, country } = req.body;
     // FIND THE USER IN THE DB USING HIS USER ID
     const user = await User.findOne({ _id: req.user.userId });
     // MAKE THE UPDATE TO THE USER DETAILS WITH NEW INCOMING DATA

@@ -10,27 +10,27 @@ const appointmentsRouter = express.Router();
 // GET THE VALIDATION FUNCTIONS
 const {
   /*validateIncomingHouseDataForAddHouse,*/
-  validateIncomingAppointmentDataForUpdatingAppointment,
+  validateIncomingAppointmentDataForUpdatingAppointment
 } = require('../middleware/validate');
 
 const {
-    getAppointments,
-    getAppointmentById,
-    putAppointmentById,
-    deleteAppointmentById
-  } = require('../controllers/appointmentsController.js');
+  getAppointments,
+  getAppointmentById,
+  putAppointmentById,
+  deleteAppointmentById
+} = require('../controllers/appointmentsController.js');
 
-  // UPDATE A HOUSE
+// UPDATE A HOUSE
 appointmentsRouter.put(
   '/updateAppointment',
   authenticateUser,
   validateIncomingAppointmentDataForUpdatingAppointment,
   putAppointmentById
 );
-  
+
 // GET AS SINGLE HOUSE
 appointmentsRouter.get('/:id', authenticateUser, getAppointmentById);
-  
+
 // GET ALL USERS
 appointmentsRouter.get('/', authenticateUser, getAppointments);
 

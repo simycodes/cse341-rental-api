@@ -1,3 +1,7 @@
+# NOTE
+Please ensure that the api is running without errors on your machine before you push changes
+to github.Render has this api deployed with the github repo - needs to be running.
+
 # COMMAND TO TO RUN THIS
 npm run dev_start
 

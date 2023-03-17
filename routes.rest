@@ -57,6 +57,134 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDA3M
 GET http://localhost:3000/users/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDA3MjY2MzEwN2Q1Njc3NTkzOGI2ZDgiLCJpYXQiOjE2NzgxOTAxNzksImV4cCI6MTY3ODI3NjU3OX0.rV7DX_45GgTuvW8L-1Q7ewpT8cQfhV4EDCDtK5LDjP8
 
+# HOUSE ROUTES
+# ADDING A HOUSE 
+###
+POST http://localhost:3000/houses/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+
+{
+    "price": "10000",
+    "houseNumber": "12345",
+    "streetName": "tusha street",
+    "residentialAreaName":"North rise",
+    "city": "ndola",
+    "province": "Copperbelt",
+    "country": "Zambia",
+    "minimumStayMonths":"2 months",
+    "maximumStayMonths": "two years",
+    "description": "Amazing house, very comfy!",
+    "viewingTimePeriod": "9hrs to 12hrs",
+    "landlordEmail":"simycodes@gmail.com",
+    "landlordPhoneNumber": "260974372761",
+    "images": []
+}
+
+# UPDATING A HOUSE 
+###
+PUT http://localhost:3000/houses/64146ddcfb2dd030accd6829
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+
+{
+    "price": "10000-edited",
+    "houseNumber": "12345",
+    "streetName": "tusha street",
+    "residentialAreaName":"North rise",
+    "city": "ndola",
+    "province": "Copperbelt",
+    "country": "Zambia",
+    "minimumStayMonths":"2 months",
+    "maximumStayMonths": "two years",
+    "description": "Amazing house, very comfy!",
+    "viewingTimePeriod": "9hrs to 12hrs",
+    "landlordEmail":"simycodes@gmail.com",
+    "landlordPhoneNumber": "+260974372761",
+    "images": []
+}
+
+# GET A SINGLE HOUSE
+###
+GET http://localhost:3000/houses/64146725465d2b405da036c5
+
+
+# GET ALL HOUSES
+###
+GET http://localhost:3000/houses
+
+# DELETE A HOUSE
+###
+DELETE http://localhost:3000/houses/6414697a0ca3402a98ef5504
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+
+# APARTMENTS ROUTES
+# ADDING AN APARTMENT 
+###
+POST http://localhost:3000/apartments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+
+{
+    "price": "100",
+    "rentalType": "Shared",
+    "apartmentPlotNumber": "1234",
+    "houseNumber": "12345",
+    "streetName": "tusha street",
+    "ApartmentBuildingName": "Simy Flats",
+    "residentialAreaName":"North rise",
+    "city": "ndola",
+    "province": "Copperbelt",
+    "country": "Zambia",
+    "minimumStayMonths":"2 months",
+    "maximumStayMonths": "two years",
+    "description": "Amazing house, very comfy!",
+    "viewingTimePeriod": "9hrs to 12hrs",
+    "landlordEmail":"simycodes@gmail.com",
+    "landlordPhoneNumber": "260974372761",
+    "images": []
+}
+
+# UPDATING AN APARTMENT 
+###
+PUT http://localhost:3000/apartments/641477268dec571490411cfc
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+
+{
+    "price": "100-updated",
+    "rentalType": "Shared",
+    "apartmentPlotNumber": "1234",
+    "houseNumber": "12345",
+    "streetName": "tusha street",
+    "ApartmentBuildingName": "Simy Flats",
+    "residentialAreaName":"North rise",
+    "city": "ndola",
+    "province": "Copperbelt",
+    "country": "Zambia",
+    "minimumStayMonths":"2 months",
+    "maximumStayMonths": "two years",
+    "description": "Amazing house, very comfy!",
+    "viewingTimePeriod": "9hrs to 12hrs",
+    "landlordEmail":"simycodes@gmail.com",
+    "landlordPhoneNumber": "260974372761",
+    "images": []
+}
+
+# GET A SINGLE APARTMENT
+###
+GET http://localhost:3000/apartments/6414771b8dec571490411cf8
+
+
+# GET ALL APARTMENTS
+###
+GET http://localhost:3000/apartments
+
+# DELETE AN APARTMENT
+###
+DELETE http://localhost:3000/apartments/641476fc8dec571490411cf0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+
 
 # DISPLAY AND INTERACT WITH THE CONTACTS API DOCUMENTATION - USE BROWSER FOR THIS ROUTE
 #ON RENDER
@@ -77,6 +205,9 @@ Content-Type: application/json
     "password":"1234567"
 }
 
+
+
+#ON RENDER
 # STANDARD USER REGISTRATION 
 ###
 POST https://cse341-rental-api-service.onrender.com/users/registerUser
@@ -114,4 +245,132 @@ Authorization: Bearer
 ###
 GET https://cse341-rental-api-service.onrender.com/users/
 Authorization: Bearer
+
+# HOUSE ROUTES
+# ADDING A HOUSE 
+###
+POST https://cse341-rental-api-service.onrender.com/houses/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+
+{
+    "price": "10000",
+    "houseNumber": "12345",
+    "streetName": "tusha street",
+    "residentialAreaName":"North rise",
+    "city": "ndola",
+    "province": "Copperbelt",
+    "country": "Zambia",
+    "minimumStayMonths":"2 months",
+    "maximumStayMonths": "two years",
+    "description": "Amazing house, very comfy!",
+    "viewingTimePeriod": "9hrs to 12hrs",
+    "landlordEmail":"simycodes@gmail.com",
+    "landlordPhoneNumber": "260974372761",
+    "images": []
+}
+
+# UPDATING A HOUSE 
+###
+PUT https://cse341-rental-api-service.onrender.com/houses/64146ddcfb2dd030accd6829
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+
+{
+    "price": "10000-edited",
+    "houseNumber": "12345",
+    "streetName": "tusha street",
+    "residentialAreaName":"North rise",
+    "city": "ndola",
+    "province": "Copperbelt",
+    "country": "Zambia",
+    "minimumStayMonths":"2 months",
+    "maximumStayMonths": "two years",
+    "description": "Amazing house, very comfy!",
+    "viewingTimePeriod": "9hrs to 12hrs",
+    "landlordEmail":"simycodes@gmail.com",
+    "landlordPhoneNumber": "+260974372761",
+    "images": []
+}
+
+# GET A SINGLE HOUSE
+###
+GET https://cse341-rental-api-service.onrender.com/houses/64146725465d2b405da036c5
+
+
+# GET ALL HOUSES
+###
+GET https://cse341-rental-api-service.onrender.com/houses
+
+# DELETE A HOUSE
+###
+DELETE https://cse341-rental-api-service.onrender.com/houses/6414697a0ca3402a98ef5504
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+
+# APARTMENTS ROUTES
+# ADDING AN APARTMENT 
+###
+POST https://cse341-rental-api-service.onrender.com/apartments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+
+{
+    "price": "100",
+    "rentalType": "Shared",
+    "apartmentPlotNumber": "1234",
+    "houseNumber": "12345",
+    "streetName": "tusha street",
+    "ApartmentBuildingName": "Simy Flats",
+    "residentialAreaName":"North rise",
+    "city": "ndola",
+    "province": "Copperbelt",
+    "country": "Zambia",
+    "minimumStayMonths":"2 months",
+    "maximumStayMonths": "two years",
+    "description": "Amazing house, very comfy!",
+    "viewingTimePeriod": "9hrs to 12hrs",
+    "landlordEmail":"simycodes@gmail.com",
+    "landlordPhoneNumber": "260974372761",
+    "images": []
+}
+
+# UPDATING AN APARTMENT 
+###
+PUT https://cse341-rental-api-service.onrender.com/apartments/641477268dec571490411cfc
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+
+{
+    "price": "100-updated",
+    "rentalType": "Shared",
+    "apartmentPlotNumber": "1234",
+    "houseNumber": "12345",
+    "streetName": "tusha street",
+    "ApartmentBuildingName": "Simy Flats",
+    "residentialAreaName":"North rise",
+    "city": "ndola",
+    "province": "Copperbelt",
+    "country": "Zambia",
+    "minimumStayMonths":"2 months",
+    "maximumStayMonths": "two years",
+    "description": "Amazing house, very comfy!",
+    "viewingTimePeriod": "9hrs to 12hrs",
+    "landlordEmail":"simycodes@gmail.com",
+    "landlordPhoneNumber": "260974372761",
+    "images": []
+}
+
+# GET A SINGLE APARTMENT
+###
+GET https://cse341-rental-api-service.onrender.com/apartments/6414771b8dec571490411cf8
+
+
+# GET ALL APARTMENTS
+###
+GET https://cse341-rental-api-service.onrender.com/apartments
+
+# DELETE AN APARTMENT
+###
+DELETE https://cse341-rental-api-service.onrender.com/apartments/641476fc8dec571490411cf0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
 

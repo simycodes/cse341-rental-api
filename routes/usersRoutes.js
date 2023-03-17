@@ -22,6 +22,20 @@ const {
   getAllUsers
 } = require('../controllers/usersController.js');
 
+const {
+  getApartments,
+  getApartmentById,
+  putApartmentbyId,
+  deleteApartmentById
+} = require('../controllers/apartmentsController.js');
+
+const {
+  getAppointments,
+  getAppointmentById,
+  putAppointmentById,
+  deleteAppointmentById
+} = require('../controllers/appointmentsController.js');
+
 // AUTHENTICATION WITH GOOGLE AUTH - LOGIN START
 userRouter.get('/google', passport.authenticate('google', { scope: ['profile'] }));
 

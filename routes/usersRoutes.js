@@ -14,12 +14,12 @@ const {
 } = require('../middleware/validate');
 
 const {
-    registerUser,
-    googleOAuth,
-    login,
-    updateUser,
-    getSingleUser,
-    getAllUsers 
+  registerUser,
+  googleOAuth,
+  login,
+  updateUser,
+  getSingleUser,
+  getAllUsers
 } = require('../controllers/usersController.js');
 
 // AUTHENTICATION WITH GOOGLE AUTH - LOGIN START
@@ -51,6 +51,5 @@ userRouter.get('/:id', authenticateUser, getSingleUser);
 
 // GET ALL USERS
 userRouter.get('/', authenticateUser, getAllUsers);
-
 
 module.exports = userRouter;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1679061672547" clover="3.2.0">
-  <project timestamp="1679061672547" name="All files">
+<coverage generated="1679062669928" clover="3.2.0">
+  <project timestamp="1679062669928" name="All files">
     <metrics statements="224" coveredstatements="119" conditionals="26" coveredconditionals="4" methods="33" coveredmethods="6" elements="283" coveredelements="129" complexity="0" loc="224" ncloc="224" packages="7" files="14" classes="14"/>
     <package name="cse341-rental-api">
       <metrics statements="28" coveredstatements="25" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>

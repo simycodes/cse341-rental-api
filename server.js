@@ -14,7 +14,7 @@ require('dotenv').config();
 // Passport config
 require('./middleware/passport')(passport); // PASSING IMPORTED password AS AN ARGUMENT
 // SETTING THE PORT
-const PORT = process.env.PORT;
+const PORT = process.env.PORT; //removed port 3000 because it conflicts with the ports
 
 // VALIDATING BY PARSING INCOMING DATA-JSON FROM APP THROUGH THE BODY IN REQUEST ARGUMENT
 app.use(bodyParser.json());

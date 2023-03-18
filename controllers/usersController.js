@@ -90,6 +90,7 @@ const updateUser = async (req, res) => {
     user.email = email;
     user.birthday = birthday;
     user.gender = gender;
+    user.favoriteQuote = favoriteQuote;
     user.location = country;
     // UPDATE THE NEW USER DETAILS - user.save(); CALLS UserSchema.pre('save',) middleware
     // that may cause some update errors, hence use of if(!this.isModified('password')) expression in the middleware
@@ -110,7 +111,7 @@ const getSingleUser = async (req, res) => {
   }
   try {
     const user = (await User.findById(req.params.id)) || (await UserOauth.findById(req.params.id));
-    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.status(200).json(user);
   } catch (error) {
     res.status(500).json(error);
@@ -123,7 +124,7 @@ const getAllUsers = async (req, res) => {
     const users = await User.find();
     const users2 = await UserOauth.find();
     let allUsers = [...users, ...users2];
-    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Type', 'application/json; charset=utf-8');
     res.status(200).json(allUsers);
   } catch (error) {
     res.status(500).json(error);

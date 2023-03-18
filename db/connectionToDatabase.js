@@ -5,9 +5,9 @@ const mongoose = require('mongoose');
 // HAVING DATA
 
 // url STRING IS THE CONNECTION STRING TO THE DB
-const connectToDatabase = (url) => {
+const connectToDatabase = (MONGO_URL) => {
   mongoose.set('strictQuery', true);
-  return mongoose.connect(url);
+  return mongoose.connect(MONGO_URL);
 };
 
 module.exports = connectToDatabase;

@@ -16,8 +16,8 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "email": "simycodes@gmail.com",
-    "password":"123456"
+    "email": "write2fredokorio@gmail.com",
+    "password":"#123kitovu"
 }
 
 # STANDARD USER REGISTRATION 
@@ -26,10 +26,10 @@ POST http://localhost:3000/users/registerUser
 Content-Type: application/json
 
 {
-    "firstName": "Simon",
-    "lastName": "Mule",
-    "email": "simycodes@gmail.com",
-    "password":"123456"
+    "firstName": "Fred",
+    "lastName": "Okorio",
+    "email": "write2fredokorio@gmail.com",
+    "password":"#123kitovu"
 }
 
 # USER UPDATE 

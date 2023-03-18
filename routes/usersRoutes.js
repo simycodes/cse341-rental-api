@@ -6,6 +6,12 @@ const userRouter = express.Router();
 
 // GET THE USER AUTHENTICATION FUNCTION
 const { authenticateUser } = require('../middleware/authentication.js');
+
+// Define a middleware that sets the content type header to JSON
+userRouter.use((req, res, next) => {
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  next();
+});
 // GET THE VALIDATION FUNCTIONS
 const {
   validateIncomingUserDataForLoginUser,

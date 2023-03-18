@@ -59,27 +59,3 @@ userRouter.get('/:id', authenticateUser, getSingleUser);
 userRouter.get('/', authenticateUser, getAllUsers);
 
 module.exports = userRouter;
-
-// const express = require('express');
-// const passport = require('passport');
-// const userRouter = express.Router();
-
-// // Define the routes and route handlers
-// userRouter.get('/google', passport.authenticate('google', { scope: ['profile'] }));
-// userRouter.post('/registerUser', validateIncomingUserDataForRegisteringUser, registerUser);
-// userRouter.get(
-//   '/google/callback',
-//   passport.authenticate('google', { failureRedirect: '/' }),
-//   googleOAuth
-// );
-// userRouter.post('/login', validateIncomingUserDataForLoginUser, login);
-// userRouter.put(
-//   '/updateUser',
-//   authenticateUser,
-//   validateIncomingUserDataForUpdatingUser,
-//   updateUser
-// );
-// userRouter.get('/:id', authenticateUser, getSingleUser);
-// userRouter.get('/', authenticateUser, getAllUsers);
-
-// module.exports = userRouter;

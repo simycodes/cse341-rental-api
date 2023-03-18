@@ -22,7 +22,8 @@ const authenticateUser = async (req, res, next) => {
       // TO IDENTITY THE USER HENCE FORTH AND MANIPULATE THE DATABASE USING THIS USER ID
       next();
     } catch (error) {
-      res.send(401).send(error.message);
+      // Reomove the second call to `send` on `res`
+      res.status(401).send(error.message);
       // throw new Error('Authentication invalid');
     }
   }

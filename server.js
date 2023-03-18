@@ -14,7 +14,7 @@ require('dotenv').config();
 // Passport config
 require('./middleware/passport')(passport); // PASSING IMPORTED password AS AN ARGUMENT
 // SETTING THE PORT
-const PORT = process.env.PORT; //removed port 3000 because it conflicts with the ports
+const PORT = process.env.PORT | 3000; //removed port 3000 because it conflicts with the ports
 
 // VALIDATING BY PARSING INCOMING DATA-JSON FROM APP THROUGH THE BODY IN REQUEST ARGUMENT
 app.use(bodyParser.json());
@@ -44,17 +44,35 @@ app.use(passport.session());
 // SERVER APP AND ALL APP ROUTES CONNECTION
 app.use('/', router);
 
+// // RUN THE SERVER (AFTER CONNECTING TO THE DATABASE)
+// const start = async (done) => {
+//   try {
+//     await connectToDatabase(process.env.MONGO_URL);
+//     app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
+//     done();
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// // CALL THE START FUNCTION TO START THE SERVER TO DATABASE CONNECTION
+// start();
 // RUN THE SERVER (AFTER CONNECTING TO THE DATABASE)
-const start = async () => {
+const start = async (done) => {
   try {
     await connectToDatabase(process.env.MONGO_URL);
-    app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
+    app.listen(PORT, () => {
+      console.log(`Server is listening on port ${PORT}...`);
+      done();
+    });
   } catch (error) {
     console.log(error);
   }
 };
 
 // CALL THE START FUNCTION TO START THE SERVER TO DATABASE CONNECTION
-start();
+if (process.env.NODE_ENV !== 'test') {
+  start(() => {});
+}
 
 module.exports = app;

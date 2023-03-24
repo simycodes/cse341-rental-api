@@ -9,32 +9,41 @@ const appointmentsRouter = express.Router();
 
 // GET THE VALIDATION FUNCTIONS
 const {
-  /*validateIncomingHouseDataForAddHouse,*/
+  validateIncomingAppointmentDataForAddAppointment,
   validateIncomingAppointmentDataForUpdatingAppointment
 } = require('../middleware/validate');
 
 const {
-  getAppointments,
-  getAppointmentById,
-  putAppointmentById,
-  deleteAppointmentById
+  getAllAppointments,
+  getSingleAppointment,
+  addAppointment,
+  updateAppointment,
+  deleteAppointment
 } = require('../controllers/appointmentsController.js');
 
-// UPDATE A HOUSE
-appointmentsRouter.put(
-  '/updateAppointment',
+// ADD AN APPOINTMENT
+appointmentsRouter.post(
+  '/',
   authenticateUser,
-  validateIncomingAppointmentDataForUpdatingAppointment,
-  putAppointmentById
+  validateIncomingAppointmentDataForAddAppointment,
+  addAppointment
 );
 
-// GET AS SINGLE HOUSE
-appointmentsRouter.get('/:id', authenticateUser, getAppointmentById);
+// UPDATE AN APPOINTMENT
+appointmentsRouter.put(
+  '/:id',
+  authenticateUser,
+  validateIncomingAppointmentDataForUpdatingAppointment,
+  updateAppointment
+);
+
+// GET AS SINGLE APPOINTMENT
+appointmentsRouter.get('/:id', authenticateUser, getSingleAppointment);
 
 // GET ALL USERS
-appointmentsRouter.get('/', authenticateUser, getAppointments);
+appointmentsRouter.get('/', authenticateUser, getAllAppointments);
 
-// DELETE A HOUSE
-appointmentsRouter.delete('/:id', authenticateUser, deleteAppointmentById);
+// DELETE AN APPOINTMENT
+appointmentsRouter.delete('/:id', authenticateUser, deleteAppointment);
 
 module.exports = appointmentsRouter;

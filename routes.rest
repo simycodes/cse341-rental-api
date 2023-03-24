@@ -16,8 +16,8 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "email": "write2fredokorio@gmail.com",
-    "password":"#123kitovu"
+    "email": "flibbit31@yahoo.com",
+    "password":"#123456"
 }
 
 # STANDARD USER REGISTRATION 
@@ -26,10 +26,10 @@ POST http://localhost:3000/users/registerUser
 Content-Type: application/json
 
 {
-    "firstName": "Fred",
-    "lastName": "Okorio",
-    "email": "write2fredokorio@gmail.com",
-    "password":"#123kitovu"
+    "firstName": "Benjamin",
+    "lastName": "Beales",
+    "email": "flibbit31@yahoo.com",
+    "password":"#123456"
 }
 
 # USER UPDATE 
@@ -123,7 +123,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0N
 ###
 POST http://localhost:3000/apartments
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDFkOGFmNmU1ZGRiZGZhNTg3NGM0ODYiLCJpYXQiOjE2Nzk2NTc3MTgsImV4cCI6MTY3OTc0NDExOH0.T68bt7UXIe3WppS9HcqbH0B6lWL52ghMMO2kzLWN7yI
 
 {
     "price": "100",
@@ -185,6 +185,43 @@ GET http://localhost:3000/apartments
 DELETE http://localhost:3000/apartments/641476fc8dec571490411cf0
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
 
+# APPOINTMENTS ROUTES
+# ADDING AN APPOINTMENT
+###
+POST http://localhost:3000/appointments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDFkOGFmNmU1ZGRiZGZhNTg3NGM0ODYiLCJpYXQiOjE2Nzk2NTc3MTgsImV4cCI6MTY3OTc0NDExOH0.T68bt7UXIe3WppS9HcqbH0B6lWL52ghMMO2kzLWN7yI
+
+{
+    "dateAndTime": "2023-07-07T08:00:00",
+    "houseOrApartmentId": "641d8beae5ddbdfa5874c488"
+}
+
+# UPDATING AN APPOINTMENT
+###
+PUT http://localhost:3000/appointments/641d98a20cbfb3e5788d4c95
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDFkOGFmNmU1ZGRiZGZhNTg3NGM0ODYiLCJpYXQiOjE2Nzk2NTc3MTgsImV4cCI6MTY3OTc0NDExOH0.T68bt7UXIe3WppS9HcqbH0B6lWL52ghMMO2kzLWN7yI
+
+{
+    "dateAndTime": "2023-08-04T08:00:00",
+    "houseOrApartmentId": "641d8beae5ddbdfa5874c488"
+}
+
+# GET A SINGLE APPOINTMENT
+###
+GET http://localhost:3000/appointments/641d98a20cbfb3e5788d4c95
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDFkOGFmNmU1ZGRiZGZhNTg3NGM0ODYiLCJpYXQiOjE2Nzk2NTc3MTgsImV4cCI6MTY3OTc0NDExOH0.T68bt7UXIe3WppS9HcqbH0B6lWL52ghMMO2kzLWN7yI
+
+# GET ALL APPOINTMENTS
+###
+GET http://localhost:3000/appointments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDFkOGFmNmU1ZGRiZGZhNTg3NGM0ODYiLCJpYXQiOjE2Nzk2NTc3MTgsImV4cCI6MTY3OTc0NDExOH0.T68bt7UXIe3WppS9HcqbH0B6lWL52ghMMO2kzLWN7yI
+
+# DELETE AN APPOINTMENT
+###
+DELETE http://localhost:3000/appointments/641d98a20cbfb3e5788d4c95
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDFkOGFmNmU1ZGRiZGZhNTg3NGM0ODYiLCJpYXQiOjE2Nzk2NTc3MTgsImV4cCI6MTY3OTc0NDExOH0.T68bt7UXIe3WppS9HcqbH0B6lWL52ghMMO2kzLWN7yI
 
 # DISPLAY AND INTERACT WITH THE CONTACTS API DOCUMENTATION - USE BROWSER FOR THIS ROUTE
 #ON RENDER

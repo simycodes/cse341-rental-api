@@ -16,8 +16,8 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "email": "flibbit31@yahoo.com",
-    "password":"#123456"
+    "email": "simycodes@gmail.com",
+    "password":"123456"
 }
 
 # STANDARD USER REGISTRATION 
@@ -55,7 +55,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDA3M
 # GET ALL USERS
 ###
 GET http://localhost:3000/users/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDA3MjY2MzEwN2Q1Njc3NTkzOGI2ZDgiLCJpYXQiOjE2NzgxOTAxNzksImV4cCI6MTY3ODI3NjU3OX0.rV7DX_45GgTuvW8L-1Q7ewpT8cQfhV4EDCDtK5LDjP8
+Authorization: Bearer 
 
 # HOUSE ROUTES
 # ADDING A HOUSE 
@@ -66,6 +66,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0N
 
 {
     "price": "10000",
+    "houseStatus": "Available",
     "houseNumber": "12345",
     "streetName": "tusha street",
     "residentialAreaName":"North rise",
@@ -89,6 +90,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0N
 
 {
     "price": "10000-edited",
+    "houseStatus": "Available",
     "houseNumber": "12345",
     "streetName": "tusha street",
     "residentialAreaName":"North rise",
@@ -127,6 +129,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDFkO
 
 {
     "price": "100",
+    "apartmentStatus": "Available",
     "rentalType": "Shared",
     "apartmentPlotNumber": "1234",
     "houseNumber": "12345",

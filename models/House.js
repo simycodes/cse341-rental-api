@@ -5,6 +5,10 @@ const HouseSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  houseStatus: {
+    type: String,
+    required: true
+  },
   houseNumber: {
     type: String,
     maxlength: 10,

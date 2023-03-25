@@ -5,6 +5,10 @@ const ApartmentSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  apartmentStatus: {
+    type: String,
+    required: true
+  },
   rentalType: {
     type: String,
     enum: ['entire-apartment', 'Shared'],

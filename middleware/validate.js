@@ -237,11 +237,11 @@ const validateIncomingAppointmentDataForUpdatingAppointment = (req, res, next) =
     houseOrApartmentId: 'required|string'
   };
   validator(req.body, validationRule, {}, (err, status) => {
-    if(!status) {
+    if (!status) {
       res.status(412).send({
         success: false,
         message: 'Validation failed',
-        data:err
+        data: err
       });
     } else {
       next();

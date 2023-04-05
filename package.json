@@ -5,24 +5,37 @@
   "main": "test.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest --watch --coverage",
+    "test": "jest --watchAll --coverage",
     "dev_start": "nodemon server.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "swagger-autogen": "node ./swagger.js"
   },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.js?(x)",
+      "**/?(*.)+(spec|test).js?(x)"
+    ],
+    "verbose": true,
+    "detectOpenHandles": true
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/simycodes/cse341-node.git"
   },
-  "author": "Simon Mule",
+  "author0": "Simon Mule",
+  "author1":"Fred Okorio",
+  "author2":"Benjamin Beales",
+  "author3":"Kissi, Adja Bernitos",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/simycodes/cse341-node/issues"
   },
   "homepage": "https://github.com/simycodes/cse341-node#readme",
   "dependencies": {
+    "axios": "^1.3.4",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
     "connect-mongo": "^4.6.0",

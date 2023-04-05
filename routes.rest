@@ -32,11 +32,20 @@ Content-Type: application/json
     "password":"#123kitovu"
 }
 
+{
+  "user": {
+    "firstName": "Fred",
+    "lastName": "Okorio",
+    "email": "write2fredokorio@gmail.com"
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDIzMWQ0ZmZiYzIwNzNhMzU3NzA0NWMiLCJpYXQiOjE2ODAwMjI4NjMsImV4cCI6MTY4MDE5NTY2M30.06qcNHmCJAjmGwZeDN4m5qNBQsIdelSNcyIgmXp17Rg"
+}
+
 # USER UPDATE 
 ###
 PUT http://localhost:3000/users/updateUser
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDA3MjY2MzEwN2Q1Njc3NTkzOGI2ZDgiLCJpYXQiOjE2NzgxOTAxNzksImV4cCI6MTY3ODI3NjU3OX0.rV7DX_45GgTuvW8L-1Q7ewpT8cQfhV4EDCDtK5LDjP8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE2MDY2ODM1MTMyNTQ5MmYxMjhlNTMiLCJpYXQiOjE2Nzk1MDk2NzIsImV4cCI6MTY3OTY4MjQ3Mn0.vbGpwPGf9m9xVdlBjRTQcfr-8yOsBlxHCUm_aRNVFNI
 
 {
     "firstName": "Danny",
@@ -55,14 +64,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDA3M
 # GET ALL USERS
 ###
 GET http://localhost:3000/users/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDA3MjY2MzEwN2Q1Njc3NTkzOGI2ZDgiLCJpYXQiOjE2NzgxOTAxNzksImV4cCI6MTY3ODI3NjU3OX0.rV7DX_45GgTuvW8L-1Q7ewpT8cQfhV4EDCDtK5LDjP8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE2MDY2ODM1MTMyNTQ5MmYxMjhlNTMiLCJpYXQiOjE2Nzk1MDk2NzIsImV4cCI6MTY3OTY4MjQ3Mn0.vbGpwPGf9m9xVdlBjRTQcfr-8yOsBlxHCUm_aRNVFNI
 
 # HOUSE ROUTES
 # ADDING A HOUSE 
 ###
 POST http://localhost:3000/houses/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE2MDY2ODM1MTMyNTQ5MmYxMjhlNTMiLCJpYXQiOjE2Nzk1MDk2NzIsImV4cCI6MTY3OTY4MjQ3Mn0.vbGpwPGf9m9xVdlBjRTQcfr-8yOsBlxHCUm_aRNVFNI
 
 {
     "price": "10000",
@@ -83,9 +92,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0N
 
 # UPDATING A HOUSE 
 ###
-PUT http://localhost:3000/houses/64146ddcfb2dd030accd6829
+PUT http://localhost:3000/houses/641b49728716f2aab5f29d85
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE2MDY2ODM1MTMyNTQ5MmYxMjhlNTMiLCJpYXQiOjE2Nzk1MDk2NzIsImV4cCI6MTY3OTY4MjQ3Mn0.vbGpwPGf9m9xVdlBjRTQcfr-8yOsBlxHCUm_aRNVFNI
 
 {
     "price": "10000-edited",
@@ -106,7 +115,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0N
 
 # GET A SINGLE HOUSE
 ###
-GET http://localhost:3000/houses/64146725465d2b405da036c5
+GET http://localhost:3000/houses/641b49728716f2aab5f29d85
 
 
 # GET ALL HOUSES
@@ -116,14 +125,14 @@ GET http://localhost:3000/houses
 # DELETE A HOUSE
 ###
 DELETE http://localhost:3000/houses/6414697a0ca3402a98ef5504
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE2MDY2ODM1MTMyNTQ5MmYxMjhlNTMiLCJpYXQiOjE2Nzk1MDk2NzIsImV4cCI6MTY3OTY4MjQ3Mn0.vbGpwPGf9m9xVdlBjRTQcfr-8yOsBlxHCUm_aRNVFNI
 
 # APARTMENTS ROUTES
 # ADDING AN APARTMENT 
 ###
 POST http://localhost:3000/apartments
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE2MDY2ODM1MTMyNTQ5MmYxMjhlNTMiLCJpYXQiOjE2Nzk1MDk2NzIsImV4cCI6MTY3OTY4MjQ3Mn0.vbGpwPGf9m9xVdlBjRTQcfr-8yOsBlxHCUm_aRNVFNI
 
 {
     "price": "100",
@@ -147,9 +156,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0N
 
 # UPDATING AN APARTMENT 
 ###
-PUT http://localhost:3000/apartments/641477268dec571490411cfc
+PUT http://localhost:3000/apartments/641b4aff8716f2aab5f29d8b
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE0NjRmZDkyNTMyYmRiMzI3ZjdmNmIiLCJpYXQiOjE2NzkwNTgxOTEsImV4cCI6MTY3OTE0NDU5MX0.s-HayWFawHNK13TCnxfEUiaYcguSiVDpuAIIhGHk1GM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDE2MDY2ODM1MTMyNTQ5MmYxMjhlNTMiLCJpYXQiOjE2Nzk1MDk2NzIsImV4cCI6MTY3OTY4MjQ3Mn0.vbGpwPGf9m9xVdlBjRTQcfr-8yOsBlxHCUm_aRNVFNI
 
 {
     "price": "100-updated",

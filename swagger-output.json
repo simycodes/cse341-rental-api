@@ -35,6 +35,9 @@
     "/users/google": {
       "get": {
         "description": "",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
         "parameters": [],
         "responses": {}
       }
@@ -42,6 +45,9 @@
     "/users/registerUser": {
       "post": {
         "description": "",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
         "parameters": [
           {
             "name": "body",
@@ -81,6 +87,9 @@
     "/users/google/callback": {
       "get": {
         "description": "",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -95,6 +104,9 @@
     "/users/login": {
       "post": {
         "description": "",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
         "parameters": [
           {
             "name": "body",
@@ -128,6 +140,9 @@
     "/users/updateUser": {
       "put": {
         "description": "",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
         "parameters": [
           {
             "name": "authorization",
@@ -182,7 +197,7 @@
       "get": {
         "description": "",
         "produces": [
-          "application/json"
+          "application/json; charset=utf-8"
         ],
         "parameters": [
           {
@@ -217,7 +232,7 @@
       "get": {
         "description": "",
         "produces": [
-          "application/json"
+          "application/json; charset=utf-8"
         ],
         "parameters": [
           {
@@ -488,6 +503,181 @@
           },
           "401": {
             "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/appointments/": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "createdBy": {
+                  "example": "any"
+                },
+                "dateAndTime": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/appointments/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "dateAndTime": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "dateAndTime": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"

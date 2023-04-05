@@ -147,7 +147,7 @@ const validateIncomingHouseDataForUpdatingHouse = (req, res, next) => {
   });
 };
 
-// FUNCTION TO VALIDATE INCOMING HOUSE DATA - ADD A HOUSE
+// FUNCTION TO VALIDATE INCOMING APARTMENT DATA - ADD AN APARTMENT
 const validateIncomingApartmentDataForAddApartment = (req, res, next) => {
   const validationRule = {
     price: 'required|string',
@@ -179,7 +179,7 @@ const validateIncomingApartmentDataForAddApartment = (req, res, next) => {
   });
 };
 
-// FUNCTION TO VALIDATE INCOMING HOUSE DATA - UPDATE A HOUSE
+// FUNCTION TO VALIDATE INCOMING APARTMENT DATA - UPDATE AN APARTMENT
 const validateIncomingApartmentDataForUpdatingApartment = (req, res, next) => {
   const validationRule = {
     price: 'required|string',
@@ -211,6 +211,44 @@ const validateIncomingApartmentDataForUpdatingApartment = (req, res, next) => {
   });
 };
 
+// FUNCTION TO VALIDATE INCOMING APPOINTMENT DATA - ADD AN APPOINTMENT
+const validateIncomingAppointmentDataForAddAppointment = (req, res, next) => {
+  const validationRule = {
+    dateAndTime: 'required|string',
+    houseOrApartmentId: 'required|string'
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
+//FUNCTION TO VALIDATE INCOMING APPOINTMENT DATA - UPDATE AN APPOINTMENT
+const validateIncomingAppointmentDataForUpdatingAppointment = (req, res, next) => {
+  const validationRule = {
+    dateAndTime: 'required|string',
+    houseOrApartmentId: 'required|string'
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
 module.exports = {
   validateIncomingPostData,
   validateIncomingUserDataForLoginUser,
@@ -219,5 +257,7 @@ module.exports = {
   validateIncomingHouseDataForAddHouse,
   validateIncomingHouseDataForUpdatingHouse,
   validateIncomingApartmentDataForAddApartment,
-  validateIncomingApartmentDataForUpdatingApartment
+  validateIncomingApartmentDataForUpdatingApartment,
+  validateIncomingAppointmentDataForAddAppointment,
+  validateIncomingAppointmentDataForUpdatingAppointment
 };
